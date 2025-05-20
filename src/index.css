@@ -1,0 +1,354 @@
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+html.mobil{
+  overflow-y: hidden;
+}
+body{
+  background: #F7F5E8;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #255D38;
+  overflow-x: hidden;
+}
+body.active{
+  overflow: hidden;
+}
+
+.header{
+  padding: 200px 10px 180px;
+}
+.header > div{
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.header > div > div{
+  width: 50%;
+}
+.header .header-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+.header .header-img div {
+  display: block;
+  margin: 0;
+  width: 22%;
+  position: relative;
+  transform: translateY(-100px);
+  opacity: 0;
+  transition: 800ms ease-in-out;
+}
+.header .header-img div.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.header .header-img img{
+  width: 100%;
+}
+.header .header-img div:after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 20px;
+  border-radius: 50%;
+  background: #a3550b;
+  filter: blur(100px);
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  transition: 800ms ease-in-out;
+}
+.header .header-img div.visible:after{
+  filter: blur(23px);
+  bottom: -50px;
+}
+.header .header-img div:nth-child(2):after{
+  background: #39520a;
+}
+.header .header-img div:nth-child(3):after{
+  background: #a14541;
+}
+.header .note{
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 5px 20px;
+  border: 1px solid #255D38;
+  border-radius: 50px;
+  margin: 0 0 30px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 500ms ease-in-out;
+}
+.header .note.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.header h1{
+  font-family: 'Pacifico', sans-serif;
+  font-size: clamp(60px, 10vw, 180px);
+  font-weight: normal;
+  line-height: clamp(60px, 10vw, 180px);
+  margin: 0 0 50px;
+}
+.header h1 span{
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 500ms ease-in-out;
+}
+.header h1 span.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.header p{
+  max-width: 600px;
+  line-height: 34px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 500ms ease-in-out;
+}
+.header p.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.cta {
+  max-width: 260px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  background: #F7F5E8;
+  padding: 4px 4px 4px 40px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 50px;
+  color: #255D38;
+  text-decoration: none;
+  border: 1px solid;
+  box-shadow: -2px 3px 0;
+  transition: 300ms cubic-bezier(0.7, -0.04, 0.24, 2.25);
+}
+.cta-container{
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 500ms ease-in-out;
+}
+.cta-container.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.cta img{
+  transition: 300ms cubic-bezier(0.7, -0.04, 0.24, 2.25);
+}
+.cta:hover{
+  transform: translate(3px, -3px);
+  box-shadow: -5px 6px 0;
+}
+.cta:hover img{
+  transform: rotate(45deg) !important;
+}
+
+.stat {
+  padding: 0 10px 250px;
+}
+.stat > div{
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 1024px;
+  margin: 0 auto;
+  background: #255D38;
+  border-radius: 100px;
+  padding: 35px 20px;
+  box-sizing: border-box;
+  color: #EFEBE2;
+  text-align: center;
+  box-shadow: 0 172px 62px -77px rgba(20, 51, 30, 0.35);
+}
+.stat h3{
+  font-size: clamp(40px, 10vw, 140px);
+  font-weight: 900;
+  font-style: italic;
+  line-height: clamp(30px, 10vw, 110px);
+  margin: 0;
+}
+.stat p{
+  margin: 0;
+  font-size: 24px;
+}
+
+.juice{
+  padding: 0 10px 100px;
+}
+.juice > div{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1024px;
+  margin: 0 auto 200px;
+}
+.juice > div:nth-child(2){
+  text-align: right;
+  flex-direction: row-reverse;
+}
+.juice>div:nth-child(2) a {
+  margin: 0 0 0 auto;
+}
+.juice > div:last-child {
+  margin: 0 auto;
+}
+.juice > div > div{
+  width: 50%;
+  position: relative;
+  z-index: 1;
+}
+.juice .hero{
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  transform: scale(1.5) translateY(100px);
+  transform-origin: center;
+  position: relative;
+  z-index: 0;
+  opacity: 0;
+  transition: 500ms ease-in-out;
+}
+.juice .hero.visible{
+  opacity: 1;
+  transform: scale(1.5)  translateY(0);
+}
+.juice h3{
+  font-family: 'Pacifico', sans-serif;
+  font-size: clamp(30px, 19vw, 90px);
+  font-weight: normal;
+  line-height: clamp(65px, 19vw, 90px);
+  margin: 0 0 30px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 500ms ease-in-out;
+}
+.juice h3.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.juice h4{
+  font-size: 34px;
+  font-weight: 900;
+  font-style: italic;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 500ms ease-in-out;
+}
+.juice h4.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.juice p{
+  margin: 0 0 30px;
+  line-height: 34px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 500ms ease-in-out;
+}
+.juice p.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.juice .cta{
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 500ms ease-in-out;
+}
+.juice .cta.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.map {
+  padding: 0 10px 100px;
+  box-sizing: border-box;
+}
+.map img{
+  width: 100%;
+  display: block;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+footer{
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+footer > div{
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+footer > div > ul,
+footer > div > div{
+  padding: 0;
+  list-style: none;
+  margin: 0 0 20px;
+}
+footer .logo {
+  display: inline-block;
+  margin: -30px 0 30px;
+  font-family: 'Pacifico', sans-serif;
+  font-size: 45px;
+  transform: rotate(-7.32deg);
+}
+footer h5{
+  font-size: 20px;
+  margin: 0 0 25px;
+}
+footer li{
+  margin: 0 0 15px;
+  font-size: 16px;
+}
+footer a{
+  text-decoration: none;
+  color: #255D38;
+}
+footer > div > div a{
+  margin: 0 15px 0 0;
+}
+footer > div > div p{
+  font-size: 16px;
+}
+@media (max-width: 500px){
+  body{
+    font-size: 18px;
+  }
+  .header > div > div{
+    width: 100%;
+  }
+  .stat p {
+    font-size: 12px;
+  }
+  .juice > div > div{
+    width: 100%;
+  }
+  .juice .hero {
+    transform-origin: bottom;
+  }
+  .juice p {
+   line-height: 27px;
+  }
+  footer > div > ul,
+  footer > div > div{
+    width: 100%;
+  }
+}
